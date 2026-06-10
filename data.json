@@ -1,0 +1,192 @@
+{
+  "generated": "2026-06-09T08:00:00+02:00",
+  "periodStart": "2026-05-01",
+  "periodEnd": "2026-06-09",
+  "order": ["padmi", "coton", "pom"],
+  "accounts": {
+    "padmi": {
+      "name": "Padmi",
+      "fullName": "Padmi Publicitaria",
+      "adAccountId": "1078022190785024",
+      "model": "Lead gen B2B · pádel",
+      "leads30d": 67,
+      "cpl30d": 43.2,
+      "daily": [
+        [121.84, 29797, 274], [95.40, 26710, 259], [130.84, 32735, 303],
+        [128.28, 30955, 309], [123.88, 25063, 225], [114.09, 18931, 177],
+        [131.16, 24263, 202], [150.14, 24823, 212], [129.36, 23479, 242],
+        [156.67, 31701, 349], [176.71, 54987, 551], [218.80, 89267, 916],
+        [125.42, 40293, 437], [105.70, 22119, 257], [105.44, 19657, 205],
+        [65.11, 11349, 160], [113.70, 26223, 290], [69.08, 15469, 157],
+        [86.16, 17318, 188], [89.49, 14370, 179], [69.16, 9028, 136],
+        [132.62, 17405, 201], [97.76, 13279, 191], [107.54, 14466, 180],
+        [99.18, 15146, 140], [98.27, 14849, 175], [93.94, 13614, 190],
+        [68.51, 9614, 129], [79.33, 11021, 161], [73.54, 10945, 114],
+        [82.06, 12415, 177], [70.24, 10471, 146], [105.43, 16692, 185],
+        [99.08, 16867, 189], [68.79, 9949, 116], [72.05, 10069, 123],
+        [88.88, 11218, 137], [103.40, 13642, 172], [86.85, 13076, 168],
+        [50.60, 7431, 91]
+      ],
+      "monthly": [
+        ["Jun 25", 379.03, 53974, 467],
+        ["Jul 25", 1137.67, 189155, 1377],
+        ["Ago 25", 1031.51, 253842, 2372],
+        ["Sep 25", 1619.57, 278802, 2152],
+        ["Oct 25", 1558.18, 295264, 2479],
+        ["Nov 25", 1544.61, 312640, 2647],
+        ["Dic 25", 1405.20, 318223, 4440],
+        ["Ene 26", 1714.23, 1308342, 6773],
+        ["Feb 26", 1614.80, 1415244, 9750],
+        ["Mar 26", 2507.17, 680879, 9333],
+        ["Abr 26", 2020.69, 502206, 4717],
+        ["May 26", 3439.18, 721291, 7686],
+        ["Jun 26*", 745.32, 109415, 1327]
+      ],
+      "campaigns": [
+        {"name": "GP_LEA_PRO_ES_FORMB2B V2", "status": "ACTIVE", "objective": "Leads", "spend": 1682.78, "ctr": 0.74, "cpc": 0.67, "results": 38, "resultType": "leads", "costPerResult": 44.28},
+        {"name": "GP_LEA_PRO_BE+FR V1", "status": "PAUSED", "objective": "Leads", "spend": 642.89, "ctr": 1.17, "cpc": 0.35, "results": 7, "resultType": "leads", "costPerResult": 91.84},
+        {"name": "GP_LEA_PRO_BE+FR V1 Copia 2", "status": "ACTIVE", "objective": "Leads", "spend": 410.53, "ctr": 1.44, "cpc": 0.66, "results": 21, "resultType": "leads", "costPerResult": 19.55},
+        {"name": "GP_LEA_RTG_ES_FORMB2B", "status": "ACTIVE", "objective": "Leads", "spend": 161.75, "ctr": 1.20, "cpc": 0.65, "results": 1, "resultType": "leads", "costPerResult": 161.75},
+        {"name": "GP_INT_PRO_ES · Owly", "status": "ACTIVE", "objective": "Engagement", "spend": 110.95, "ctr": 5.78, "cpc": 0.07, "results": 1477, "resultType": "visitas perfil", "costPerResult": 0.08}
+      ],
+      "adsets": [
+        {"name": "FORM_B2B_AD+", "status": "ACTIVE", "spend": 1015.91, "ctr": 0.81, "cpc": 0.53, "results": 16, "resultType": "leads", "costPerResult": 63.49},
+        {"name": "FORM_B2B_FR_AD+", "status": "CAMPAIGN_PAUSED", "spend": 500.02, "ctr": 1.23, "cpc": 0.34, "results": 7, "resultType": "leads", "costPerResult": 71.43},
+        {"name": "FORM_B2B_INT (nuevas creatives)", "status": "ACTIVE", "spend": 447.57, "ctr": 0.60, "cpc": 1.07, "results": 14, "resultType": "leads", "costPerResult": 31.97},
+        {"name": "FORM_B2B_FR_AD+ estáticas", "status": "ACTIVE", "spend": 287.64, "ctr": 1.57, "cpc": 0.65, "results": 14, "resultType": "leads", "costPerResult": 20.55},
+        {"name": "RTG_BE_FORMB2B V1", "status": "ACTIVE", "spend": 161.76, "ctr": 1.20, "cpc": 0.65, "results": 1, "resultType": "leads", "costPerResult": 161.76},
+        {"name": "FORM_B2B_INT (antiguas creatives)", "status": "ACTIVE", "spend": 145.40, "ctr": 0.36, "cpc": 2.20, "results": 1, "resultType": "leads", "costPerResult": 145.40},
+        {"name": "FORM_B2B_BE_AD+ (FR V1)", "status": "CAMPAIGN_PAUSED", "spend": 142.87, "ctr": 0.95, "cpc": 0.44, "results": 0, "resultType": "leads", "costPerResult": null},
+        {"name": "Adset 1 · Interacción Owly", "status": "ACTIVE", "spend": 110.95, "ctr": 5.78, "cpc": 0.07, "results": 1477, "resultType": "visitas", "costPerResult": 0.08},
+        {"name": "FORM_B2B_BE_AD+ (Copia2)", "status": "ACTIVE", "spend": 86.98, "ctr": 1.23, "cpc": 0.68, "results": 2, "resultType": "leads", "costPerResult": 43.49},
+        {"name": "FORM_B2B_World padel summit", "status": "PAUSED", "spend": 73.90, "ctr": 0.74, "cpc": 0.60, "results": 7, "resultType": "leads", "costPerResult": 10.56},
+        {"name": "FORM_B2B_FR_AD+ · Vídeos", "status": "ACTIVE", "spend": 35.91, "ctr": 1.12, "cpc": 0.70, "results": 5, "resultType": "leads", "costPerResult": 7.18}
+      ],
+      "recommendations": [
+        "Reasignar presupuesto: la campaña ES V2 se lleva el 56% del gasto con el peor CTR (0,74%) y CPL €44. La BE+FR Copia 2 (CPL €19,55) y el adset FR Vídeos (CPL €7,18) están infrafinanciados. Mover budget hacia los CPL bajos.",
+        "Cortar creativo quemado: el adset «INT antiguas creatives» tiene CTR 0,36% y CPL €145. Pausar o renovar ya. Plantéate reactivar «World padel summit» (estaba a CPL €10,56 antes de pausarse).",
+        "Limpiar tracking: 4 píxeles, solo 1 sano. Consolidar en «Padmi Publicitaria Pixel», reactivar el CAPI parado desde marzo, subir el EMQ (4,6) con más match keys y arreglar el PageView (apenas dispara)."
+      ],
+      "pixels": [
+        {"name": "Padmi Publicitaria Pixel", "status": "ok", "detail": "Vivo · web+CRM · CAPI ayer · funnel lead→opp→customer"},
+        {"name": "Pixel Padmi", "status": "warn", "detail": "CAPI parado desde 20-mar · pertenece a otro business"},
+        {"name": "Padmi", "status": "bad", "detail": "Muerto desde 24-ene"},
+        {"name": "Padmi Pixel", "status": "bad", "detail": "Zombie · nunca ha disparado"}
+      ]
+    },
+    "coton": {
+      "name": "Coton et Bois",
+      "fullName": "Coton et Bois",
+      "adAccountId": "478835545931836",
+      "model": "Lead gen · reformas/cocinas",
+      "leads30d": 85,
+      "cpl30d": 13.6,
+      "daily": [
+        [29.61, 2863, 611], [24.68, 3128, 590], [29.04, 4766, 443],
+        [46.76, 6920, 1081], [34.09, 5656, 478], [25.07, 3773, 184],
+        [28.28, 4859, 260], [22.71, 3816, 183], [24.14, 3851, 188],
+        [27.28, 3939, 207], [25.08, 3450, 171], [34.52, 5297, 363],
+        [56.39, 7939, 699], [39.04, 5137, 382], [37.65, 5111, 381],
+        [39.85, 5587, 459], [66.33, 11937, 748], [41.95, 7538, 506],
+        [46.98, 8106, 578], [41.21, 7322, 385], [36.49, 5974, 338],
+        [40.11, 6353, 421], [40.78, 5949, 348], [47.15, 6859, 326],
+        [38.94, 5413, 322], [40.09, 5726, 277], [26.40, 3476, 150],
+        [15.71, 2310, 92], [13.36, 1547, 95], [12.33, 1332, 70],
+        [17.31, 1822, 112], [20.14, 2623, 174], [34.08, 4480, 240],
+        [48.06, 6144, 292], [50.79, 6927, 341], [43.73, 5515, 245],
+        [50.56, 5970, 270], [64.33, 8122, 400], [56.95, 7016, 344],
+        [28.18, 3256, 171]
+      ],
+      "monthly": [
+        ["Jun 25", 546.19, 122005, 5772],
+        ["Jul 25", 407.52, 111993, 5845],
+        ["Ago 25", 437.46, 142636, 7824],
+        ["Sep 25", 414.67, 98312, 5472],
+        ["Oct 25", 428.92, 113357, 5862],
+        ["Nov 25", 341.79, 91648, 4905],
+        ["Dic 25", 425.42, 113569, 5955],
+        ["Ene 26", 429.97, 168159, 8168],
+        ["Feb 26", 387.76, 110871, 7538],
+        ["Mar 26", 431.59, 112648, 7638],
+        ["Abr 26", 430.60, 109388, 9166],
+        ["May 26", 1049.33, 157756, 11448],
+        ["Jun 26*", 396.82, 50053, 2477]
+      ],
+      "campaigns": [
+        {"name": "ES_Captación_Leads_Prospecting Cocina", "status": "ACTIVE", "objective": "Leads", "spend": 713.29, "ctr": 4.01, "cpc": 0.18, "results": 62, "resultType": "leads", "costPerResult": 11.50},
+        {"name": "ES_Captación_Leads_Prospecting Reforma completa", "status": "ACTIVE", "objective": "Leads", "spend": 440.30, "ctr": 8.70, "cpc": 0.08, "results": 23, "resultType": "leads", "costPerResult": 19.14}
+      ],
+      "adsets": [
+        {"name": "ES_Intereses_Leads_Estilo_Cocinas", "status": "ACTIVE", "spend": 585.23, "ctr": 3.99, "cpc": 0.18, "results": 53, "resultType": "leads", "costPerResult": 11.04},
+        {"name": "ES_Intereses_Leads_LAL Web Advt+", "status": "ACTIVE", "spend": 440.30, "ctr": 8.70, "cpc": 0.08, "results": 23, "resultType": "leads", "costPerResult": 19.14},
+        {"name": "ES_Intereses_Leads_Estilo_Cocinas V2", "status": "ACTIVE", "spend": 65.19, "ctr": 3.71, "cpc": 0.17, "results": 8, "resultType": "leads", "costPerResult": 8.15},
+        {"name": "ES_RTG_Leads_Estilo_Cocinas Estáticas", "status": "ACTIVE", "spend": 33.41, "ctr": 4.65, "cpc": 0.20, "results": 1, "resultType": "leads", "costPerResult": 33.41},
+        {"name": "ES_Intereses_Leads_LAL Web", "status": "PAUSED", "spend": 29.46, "ctr": 4.67, "cpc": 0.15, "results": 0, "resultType": "leads", "costPerResult": null}
+      ],
+      "recommendations": [
+        "Fatiga de creativo clara: el CTR diario se ha desplomado de ~15-20% (inicio de mayo) a ~5% (junio). Refrescar creativos de Prospecting cuanto antes; es la palanca nº1 ahora mismo.",
+        "Escalar lo barato: «Cocinas V2» (CPL €8,15) y «Prospecting Cocina» (CPL €11,50) están baratísimos. Hay margen claro para subirles presupuesto y crecer leads sin disparar el CAC.",
+        "Saturación de audiencia: el CPM ha subido de ~€4 a €8-9 mientras cae el alcance diario. La audiencia se está quemando — ampliar intereses, abrir nuevos LAL o subir cobertura geográfica."
+      ],
+      "pixels": []
+    },
+    "pom": {
+      "name": "Pom Medical",
+      "fullName": "Pom Medical",
+      "adAccountId": "1006407757639528",
+      "model": "Lead gen · clínicas dentales",
+      "leads30d": 89,
+      "cpl30d": 27.0,
+      "daily": [
+        [58.50, 4163, 43], [55.96, 4059, 30], [77.48, 5504, 60],
+        [74.42, 4199, 86], [63.42, 5179, 62], [100.37, 7805, 89],
+        [95.76, 8001, 88], [90.74, 6743, 93], [73.52, 5455, 45],
+        [97.37, 6867, 67], [94.05, 7730, 72], [83.78, 6449, 63],
+        [84.65, 5419, 49], [73.90, 5249, 53], [68.19, 4950, 46],
+        [60.19, 4835, 36], [93.48, 6936, 56], [83.35, 6690, 67],
+        [89.62, 7210, 54], [94.56, 6264, 55], [73.65, 4906, 50],
+        [67.77, 4118, 38], [57.35, 3186, 45], [99.80, 5731, 42],
+        [92.72, 5425, 40], [68.30, 4817, 49], [79.96, 7382, 55],
+        [79.93, 5174, 45], [74.37, 6131, 52], [64.44, 4736, 50],
+        [100.17, 7441, 67], [66.71, 5235, 38], [61.82, 5123, 26],
+        [101.62, 6970, 59], [95.60, 6328, 75], [65.48, 4904, 48],
+        [68.51, 5290, 51], [88.23, 6467, 73], [78.42, 5916, 52],
+        [49.84, 3686, 50]
+      ],
+      "monthly": [
+        ["Jun 25", 298.03, 313913, 4327],
+        ["Jul 25", null, null, null],
+        ["Ago 25", null, null, null],
+        ["Sep 25", null, null, null],
+        ["Oct 25", null, null, null],
+        ["Nov 25", 911.13, 72653, 1526],
+        ["Dic 25", 1263.11, 96367, 1472],
+        ["Ene 26", 2510.60, 262950, 5704],
+        ["Feb 26", 1840.14, 249589, 2888],
+        ["Mar 26", 1792.65, 174916, 1741],
+        ["Abr 26", 1195.47, 90079, 1037],
+        ["May 26", 2471.77, 178754, 1747],
+        ["Jun 26*", 676.23, 49919, 472]
+      ],
+      "campaigns": [
+        {"name": "CA_Clínicas Dentales Lead Ads · NUEVO", "status": "ACTIVE", "objective": "Leads", "spend": 2231.38, "ctr": 0.84, "cpc": 1.61, "results": 77, "resultType": "leads", "costPerResult": 28.98},
+        {"name": "CA_Clínicas Dentales Lead ADS · Retargeting", "status": "ACTIVE", "objective": "Leads", "spend": 151.44, "ctr": 2.15, "cpc": 0.98, "results": 12, "resultType": "leads", "costPerResult": 12.62},
+        {"name": "CA_Impresora Formlabs Lead Ads", "status": "PAUSED", "objective": "Leads", "spend": 25.17, "ctr": 1.46, "cpc": 0.81, "results": 0, "resultType": "leads", "costPerResult": null}
+      ],
+      "adsets": [
+        {"name": "GR_Clínicas Dentales NUEVO_DENTISTAS", "status": "ACTIVE", "spend": 1036.67, "ctr": 0.91, "cpc": 1.56, "results": 36, "resultType": "leads", "costPerResult": 28.80},
+        {"name": "GR_Clínicas Dentales NUEVO_Advt+", "status": "ACTIVE", "spend": 913.36, "ctr": 0.74, "cpc": 1.80, "results": 32, "resultType": "leads", "costPerResult": 28.54},
+        {"name": "GR_Clínicas Dentales NUEVO_Advt+ (Facebook)", "status": "ACTIVE", "spend": 281.35, "ctr": 0.95, "cpc": 1.31, "results": 9, "resultType": "leads", "costPerResult": 31.26},
+        {"name": "GR_RTG General", "status": "ACTIVE", "spend": 151.44, "ctr": 2.15, "cpc": 0.98, "results": 12, "resultType": "leads", "costPerResult": 12.62},
+        {"name": "Adset 1 · LaL Formlabs", "status": "WITH_ISSUES", "spend": 14.46, "ctr": 1.20, "cpc": 1.45, "results": 0, "resultType": "leads", "costPerResult": null},
+        {"name": "Adset 1 · Prospecting Intereses Formlabs", "status": "WITH_ISSUES", "spend": 10.71, "ctr": 1.62, "cpc": 0.51, "results": 0, "resultType": "leads", "costPerResult": null}
+      ],
+      "recommendations": [
+        "Adsets «Formlabs» en WITH_ISSUES gastando sin generar ningún lead. Revisar configuración (evento/segmentación) o pausar definitivamente.",
+        "Escalar retargeting: el RTG va a CPL €12,62, menos de la mitad que prospecting (€28-31), pero solo recibe €151 de ~€2.400. Ampliar budget y audiencias de retargeting.",
+        "Coste al alza: CPC roza los €2,3 en días de junio y CPM €13-18 (sector caro). El CTR 0,84% de la campaña grande es mejorable — testear nuevos ángulos creativos para frenar la subida del CAC."
+      ],
+      "pixels": []
+    }
+  }
+}

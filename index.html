@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driza · Paid Media Command Center</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232B44C0' width='100' height='100' rx='20'/><text fill='white' x='50' y='68' text-anchor='middle' font-family='system-ui' font-size='55' font-weight='700'>D</text></svg>">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f4f5f9;color:#161a2e;line-height:1.5}
+
+/* ── Auth ── */
+#auth{position:fixed;inset:0;background:linear-gradient(135deg,#1a2a6c,#2B44C0,#4a6cf7);display:flex;align-items:center;justify-content:center;z-index:1000;transition:opacity .4s}
+#auth.hide{opacity:0;pointer-events:none}
+.auth-card{background:#fff;border-radius:20px;padding:48px 40px;width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.auth-logo{width:56px;height:56px;background:#2B44C0;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px;font-weight:800;color:#fff}
+.auth-card h1{font-size:22px;font-weight:700;margin-bottom:4px;color:#161a2e}
+.auth-card p{font-size:13.5px;color:#7c8099;margin-bottom:28px}
+.auth-input{width:100%;padding:13px 16px;border:1.5px solid #e4e6f0;border-radius:10px;font-size:14px;outline:none;transition:border-color .2s}
+.auth-input:focus{border-color:#2B44C0}
+.auth-btn{width:100%;padding:13px;border:none;border-radius:10px;background:#2B44C0;color:#fff;font-size:14px;font-weight:600;cursor:pointer;margin-top:12px;transition:background .2s}
+.auth-btn:hover{background:#1e3399}
+.auth-err{color:#d8453b;font-size:12.5px;margin-top:10px;min-height:18px}
+
+/* ── App shell ── */
+#app{display:none;padding:24px;max-width:1200px;margin:0 auto}
+#app.show{display:block}
+.header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+.header h1{font-size:21px;font-weight:700;letter-spacing:-.4px}
+.header .sub{color:#6b7088;font-size:13px;margin-top:3px}
+.header-right{text-align:right}
+.header-right .date{font-size:12px;color:#9398ad}
+.logout{border:none;background:none;color:#9398ad;font-size:12px;cursor:pointer;text-decoration:underline;margin-top:4px}
+.logout:hover{color:#2B44C0}
+
+/* ── Tabs ── */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tab{padding:8px 16px;border-radius:9px;background:#fff;border:1px solid #e4e6f0;cursor:pointer;font-size:13px;font-weight:600;color:#4a4f6b;transition:all .15s}
+.tab:hover{border-color:#2B44C0;color:#2B44C0}
+.tab.on{background:#2B44C0;color:#fff;border-color:#2B44C0}
+
+/* ── Cards ── */
+.card{background:#fff;border:1px solid #e9eaf2;border-radius:14px;padding:20px 22px;margin-bottom:16px}
+.card h2{font-size:15px;font-weight:700;margin-bottom:4px}
+.card .hint{font-size:12px;color:#7c8099;margin-bottom:14px}
+
+/* ── Scorecard ── */
+.seg{display:inline-flex;background:#eef0f7;border-radius:9px;padding:3px;gap:2px}
+.seg button{border:0;background:transparent;padding:6px 14px;border-radius:7px;font-size:12.5px;font-weight:600;color:#5a5f7a;cursor:pointer;transition:all .15s}
+.seg button.on{background:#fff;color:#2B44C0;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pill{font-size:11px;color:#8a8ea6;margin-left:8px}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:right;padding:9px 10px;border-bottom:1px solid #f0f1f6;white-space:nowrap}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#9094ab;font-weight:600}
+td.l,th.l{text-align:left;white-space:normal}
+tr.tot td{font-weight:700;background:#fafbff;border-top:2px solid #e4e6f0;border-bottom:none}
+
+.acct-name{font-weight:600;cursor:pointer;color:#2B44C0;text-decoration:none}
+.acct-name:hover{text-decoration:underline}
+.val{font-weight:600}
+.d{font-size:11px;display:block;margin-top:2px}
+.good{color:#0a9d63}.bad{color:#d8453b}.neu{color:#9398ad}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.dot.ok{background:#16c073}.dot.warn{background:#f5a623}.dot.bad{background:#e0463c}
+
+/* ── KPIs ── */
+.kpis{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.kpi{flex:1;min-width:130px;background:#fafbff;border:1px solid #eef0f7;border-radius:11px;padding:14px 16px}
+.kpi .k{font-size:11px;color:#8a8ea6;text-transform:uppercase;letter-spacing:.4px}
+.kpi .v{font-size:20px;font-weight:700;margin-top:4px}
+
+/* ── Recommendations ── */
+.recs{list-style:none}
+.recs li{position:relative;padding:12px 14px 12px 42px;background:#f7f8ff;border:1px solid #e9ebf8;border-radius:10px;margin-bottom:8px;font-size:13px;line-height:1.55}
+.recs .n{position:absolute;left:12px;top:12px;width:20px;height:20px;border-radius:50%;background:#2B44C0;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* ── Badges ── */
+.badge{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block}
+.b-act{background:#e4f7ee;color:#0a9d63}
+.b-pause{background:#fdeceb;color:#d8453b}
+.b-issue{background:#fff4e0;color:#c9821a}
+
+/* ── Chart ── */
+.cw{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.cw select{padding:7px 10px;border-radius:8px;border:1px solid #e4e6f0;font-size:13px;font-weight:600;color:#4a4f6b;background:#fff;cursor:pointer}
+canvas{max-height:300px}
+
+/* ── Note ── */
+.note{font-size:12px;color:#7c8099;background:#fafbff;border:1px dashed #e0e2ee;border-radius:9px;padding:9px 12px;margin-top:10px}
+
+/* ── Footer ── */
+.foot{font-size:11px;color:#9398ad;text-align:center;margin-top:12px;padding-bottom:20px}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  #app{padding:14px}
+  .card{padding:14px 16px}
+  table{font-size:12px}
+  th,td{padding:7px 6px}
+  .kpis{gap:6px}
+  .kpi{min-width:100px;padding:10px 12px}
+  .kpi .v{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ Auth overlay ═══ -->
+<div id="auth">
+  <div class="auth-card">
+    <div class="auth-logo">D</div>
+    <h1>Paid Media Command Center</h1>
+    <p>Panel interno del equipo de paid · Driza</p>
+    <input type="password" id="pwd" class="auth-input" placeholder="Contraseña del equipo" autofocus>
+    <button class="auth-btn" id="loginBtn">Entrar</button>
+    <div class="auth-err" id="authErr"></div>
+  </div>
+</div>
+
+<!-- ═══ Dashboard ═══ -->
+<div id="app">
+  <div class="header">
+    <div>
+      <h1>Driza · Paid Media Command Center</h1>
+      <div class="sub">Meta Ads · 3 cuentas · datos reales</div>
+    </div>
+    <div class="header-right">
+      <div class="date" id="genDate"></div>
+      <button class="logout" onclick="logout()">Cerrar sesión</button>
+    </div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div id="view"></div>
+  <div class="foot">Driza · Paid Media Command Center · v1</div>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// CONFIG
+// ═══════════════════════════════════════
+const TEAM_PWD = 'drizapaid';
+const METRICS = [['spend','Gasto'],['impressions','Impr.'],['clicks','Clics'],['ctr','CTR'],['cpc','CPC'],['cpm','CPM']];
+const DIR = {spend:'neu',impressions:'neu',clicks:'neu',ctr:'up',cpc:'down',cpm:'down'};
+const WIN = {
+  day:  {cur:[38,39], prev:[37,38], lbl:'8-jun vs 7-jun'},
+  week: {cur:[32,39], prev:[25,32], lbl:'2–8 jun vs 26 may–1 jun'},
+  month:{cur:[31,39], prev:[0,8],   lbl:'jun 1–8 vs may 1–8'}
+};
+
+let DATA = null, period = 'week', tab = 'cartera', chart = null, chartAcct = null, chartMetric = 'spend';
+
+// ═══════════════════════════════════════
+// AUTH
+// ═══════════════════════════════════════
+function checkAuth() {
+  if (sessionStorage.getItem('driza_auth') === 'ok') showApp();
+}
+
+function login() {
+  const v = document.getElementById('pwd').value;
+  if (v === TEAM_PWD) {
+    sessionStorage.setItem('driza_auth', 'ok');
+    showApp();
+  } else {
+    document.getElementById('authErr').textContent = 'Contraseña incorrecta';
+    document.getElementById('pwd').value = '';
+  }
+}
+
+function logout() {
+  sessionStorage.removeItem('driza_auth');
+  location.reload();
+}
+
+function showApp() {
+  document.getElementById('auth').classList.add('hide');
+  document.getElementById('app').classList.add('show');
+  setTimeout(() => document.getElementById('auth').style.display = 'none', 400);
+  loadData();
+}
+
+document.getElementById('loginBtn').onclick = login;
+document.getElementById('pwd').addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
+
+// ═══════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════
+async function loadData() {
+  try {
+    const r = await fetch('data.json?t=' + Date.now());
+    DATA = await r.json();
+    chartAcct = DATA.order[0];
+    document.getElementById('genDate').textContent = 'Datos: ' + new Date(DATA.generated).toLocaleString('es-ES');
+    render();
+  } catch (e) {
+    document.getElementById('view').innerHTML = '<div class="card"><h2>Error cargando datos</h2><p>No se pudo cargar data.json. Verifica que el archivo existe.</p></div>';
+  }
+}
+
+// ═══════════════════════════════════════
+// AGGREGATION
+// ═══════════════════════════════════════
+function agg(rows, i0, i1) {
+  let s = 0, im = 0, cl = 0;
+  for (let i = i0; i < i1; i++) { s += rows[i][0]; im += rows[i][1]; cl += rows[i][2]; }
+  return { spend: s, impressions: im, clicks: cl, ctr: im ? cl / im * 100 : 0, cpc: cl ? s / cl : 0, cpm: im ? s / im * 1000 : 0 };
+}
+
+function delta(c, p) {
+  const o = {};
+  for (const k in c) o[k] = p[k] ? (c[k] - p[k]) / p[k] * 100 : null;
+  return o;
+}
+
+function health(d) {
+  let f = 0;
+  if (d.ctr !== null && d.ctr < -15) f++;
+  if (d.cpc !== null && d.cpc > 15) f++;
+  if (d.cpm !== null && d.cpm > 20) f++;
+  return f >= 2 ? 'bad' : (f === 1 ? 'warn' : 'ok');
+}
+
+function buildPortfolio(per) {
+  const w = WIN[per];
+  const rows = [];
+  let tc = { spend: 0, impressions: 0, clicks: 0 }, tp = { spend: 0, impressions: 0, clicks: 0 };
+  DATA.order.forEach(a => {
+    const acct = DATA.accounts[a];
+    const cur = agg(acct.daily, w.cur[0], w.cur[1]);
+    const prev = agg(acct.daily, w.prev[0], w.prev[1]);
+    ['spend','impressions','clicks'].forEach(k => { tc[k] += cur[k]; tp[k] += prev[k]; });
+    const d = delta(cur, prev);
+    rows.push({ acct: a, name: acct.name, cur, delta: d, health: health(d) });
+  });
+  const fin = t => ({ ...t, ctr: t.impressions ? t.clicks / t.impressions * 100 : 0, cpc: t.clicks ? t.spend / t.clicks : 0, cpm: t.impressions ? t.spend / t.impressions * 1000 : 0 });
+  return { label: w.lbl, rows, total: { cur: fin(tc), delta: delta(fin(tc), fin(tp)) } };
+}
+
+// ═══════════════════════════════════════
+// FORMAT
+// ═══════════════════════════════════════
+const eur = n => '€' + n.toLocaleString('es-ES', { minimumFractionDigits: n < 100 ? 2 : 0, maximumFractionDigits: n < 100 ? 2 : 0 });
+const num = n => Math.round(n).toLocaleString('es-ES');
+const pct = n => n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+
+function fmt(m, v) {
+  if (m === 'spend') return eur(v);
+  if (m === 'ctr') return pct(v);
+  if (m === 'cpc' || m === 'cpm') return eur(v);
+  return num(v);
+}
+
+function dcls(m, d) {
+  if (d === null) return 'neu';
+  if (Math.abs(d) < 2) return 'neu';
+  const dir = DIR[m];
+  if (dir === 'neu') return 'neu';
+  if (dir === 'up') return d > 0 ? 'good' : 'bad';
+  return d < 0 ? 'good' : 'bad';
+}
+
+function darr(d) {
+  if (d === null) return '';
+  return (d > 0 ? '▲ ' : '▼ ') + Math.abs(d).toLocaleString('es-ES', { maximumFractionDigits: 0 }) + '%';
+}
+
+function badge(s) {
+  if (s === 'ACTIVE') return '<span class="badge b-act">ACTIVA</span>';
+  if (s.indexOf('ISSUE') >= 0) return '<span class="badge b-issue">CON ISSUES</span>';
+  if (s.indexOf('PAUSE') >= 0) return '<span class="badge b-pause">PAUSADA</span>';
+  return '<span class="badge b-pause">' + s + '</span>';
+}
+
+// ═══════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════
+function render() {
+  renderTabs();
+  if (tab === 'cartera') renderCartera();
+  else renderDetalle(tab);
+}
+
+function renderTabs() {
+  const t = document.getElementById('tabs');
+  let h = '<div class="tab' + (tab === 'cartera' ? ' on' : '') + '" data-t="cartera">Cartera</div>';
+  DATA.order.forEach(a => {
+    h += '<div class="tab' + (tab === a ? ' on' : '') + '" data-t="' + a + '">' + DATA.accounts[a].name + '</div>';
+  });
+  t.innerHTML = h;
+  [...t.children].forEach(el => el.onclick = () => { tab = el.dataset.t; render(); });
+}
+
+function renderCartera() {
+  const P = buildPortfolio(period);
+  let h = '<div class="card"><h2>Scorecard de cartera</h2>'
+    + '<div class="hint">Valor del periodo + variación vs anterior. Color = bueno/malo según la métrica.</div>'
+    + '<div class="seg">'
+    + '<button data-p="day"' + (period === 'day' ? ' class="on"' : '') + '>Día</button>'
+    + '<button data-p="week"' + (period === 'week' ? ' class="on"' : '') + '>Semana</button>'
+    + '<button data-p="month"' + (period === 'month' ? ' class="on"' : '') + '>Mes</button>'
+    + '</div><span class="pill">' + P.label + '</span>'
+    + '<table style="margin-top:12px"><thead><tr><th class="l">Cuenta</th><th>Salud</th>';
+
+  METRICS.forEach(m => h += '<th>' + m[1] + '</th>');
+  h += '</tr></thead><tbody>';
+
+  P.rows.forEach(r => {
+    h += '<tr><td class="l"><a class="acct-name" data-go="' + r.acct + '">' + r.name + '</a></td>'
+      + '<td><span class="dot ' + r.health + '"></span></td>';
+    METRICS.forEach(m => {
+      h += '<td><span class="val">' + fmt(m[0], r.cur[m[0]]) + '</span>'
+        + '<span class="d ' + dcls(m[0], r.delta[m[0]]) + '">' + darr(r.delta[m[0]]) + '</span></td>';
+    });
+    h += '</tr>';
+  });
+
+  const T = P.total;
+  h += '<tr class="tot"><td class="l">CARTERA</td><td></td>';
+  METRICS.forEach(m => {
+    h += '<td><span class="val">' + fmt(m[0], T.cur[m[0]]) + '</span>'
+      + '<span class="d ' + dcls(m[0], T.delta[m[0]]) + '">' + darr(T.delta[m[0]]) + '</span></td>';
+  });
+  h += '</tr></tbody></table>'
+    + '<div class="note">Leads / CPL no se agregan a nivel cartera (objetivos distintos). Van en el detalle de cada cuenta. Hoy (9-jun) se excluye por ser día parcial.</div></div>';
+
+  h += '<div class="card"><h2>Tendencia · 12 meses</h2><div class="cw">'
+    + '<select id="cAcct">' + DATA.order.map(a => '<option value="' + a + '"' + (a === chartAcct ? ' selected' : '') + '>' + DATA.accounts[a].name + '</option>').join('') + '</select>'
+    + '<select id="cMetric">' + METRICS.map(m => '<option value="' + m[0] + '"' + (m[0] === chartMetric ? ' selected' : '') + '>' + m[1] + '</option>').join('') + '</select>'
+    + '<span class="pill">* jun 26 = mes en curso (parcial)</span>'
+    + '</div><canvas id="trend"></canvas></div>';
+
+  document.getElementById('view').innerHTML = h;
+
+  document.querySelectorAll('.seg button').forEach(b => b.onclick = () => { period = b.dataset.p; render(); });
+  document.querySelectorAll('.acct-name').forEach(e => e.onclick = () => { tab = e.dataset.go; render(); });
+  document.getElementById('cAcct').onchange = e => { chartAcct = e.target.value; drawChart(); };
+  document.getElementById('cMetric').onchange = e => { chartMetric = e.target.value; drawChart(); };
+  drawChart();
+}
+
+function trendData(acctId, metric) {
+  return DATA.accounts[acctId].monthly.map(m => {
+    if (m[1] === null) return null;
+    if (metric === 'spend') return m[1];
+    if (metric === 'impressions') return m[2];
+    if (metric === 'clicks') return m[3];
+    if (metric === 'ctr') return m[2] ? m[3] / m[2] * 100 : null;
+    if (metric === 'cpc') return m[3] ? m[1] / m[3] : null;
+    if (metric === 'cpm') return m[2] ? m[1] / m[2] * 1000 : null;
+  });
+}
+
+function drawChart() {
+  const labels = DATA.accounts[chartAcct].monthly.map(m => m[0]);
+  const ml = METRICS.find(m => m[0] === chartMetric)[1];
+  if (chart) chart.destroy();
+  chart = new Chart(document.getElementById('trend'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: ml,
+        data: trendData(chartAcct, chartMetric),
+        borderColor: '#2B44C0',
+        backgroundColor: 'rgba(43,68,192,.08)',
+        fill: true, tension: .32, spanGaps: true,
+        pointRadius: 4, pointBackgroundColor: '#2B44C0',
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#161a2e',
+          titleFont: { size: 12 },
+          bodyFont: { size: 13, weight: '600' },
+          padding: 10,
+          cornerRadius: 8,
+          callbacks: {
+            label: ctx => {
+              const v = ctx.parsed.y;
+              if (chartMetric === 'spend' || chartMetric === 'cpc' || chartMetric === 'cpm') return ' ' + ml + ': €' + v.toLocaleString('es-ES', { maximumFractionDigits: 2 });
+              if (chartMetric === 'ctr') return ' ' + ml + ': ' + v.toFixed(2) + '%';
+              return ' ' + ml + ': ' + Math.round(v).toLocaleString('es-ES');
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          ticks: {
+            callback: v => {
+              if (chartMetric === 'spend') return '€' + num(v);
+              if (chartMetric === 'ctr') return v.toFixed(1) + '%';
+              if (chartMetric === 'cpc' || chartMetric === 'cpm') return '€' + v.toFixed(1);
+              return num(v);
+            }
+          },
+          grid: { color: '#f0f1f6' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+function renderDetalle(acctId) {
+  const A = DATA.accounts[acctId];
+  const mtd = agg(A.daily, 31, 39);
+
+  let h = '<div class="card"><h2>' + A.fullName + '</h2>'
+    + '<div class="hint">' + A.model + ' · Ad account ' + A.adAccountId + '</div>'
+    + '<div class="kpis">'
+    + '<div class="kpi"><div class="k">Gasto MTD jun</div><div class="v">' + eur(mtd.spend) + '</div></div>'
+    + '<div class="kpi"><div class="k">CTR</div><div class="v">' + pct(mtd.ctr) + '</div></div>'
+    + '<div class="kpi"><div class="k">CPC</div><div class="v">' + eur(mtd.cpc) + '</div></div>'
+    + '<div class="kpi"><div class="k">CPM</div><div class="v">' + eur(mtd.cpm) + '</div></div>'
+    + '<div class="kpi"><div class="k">Leads (30d)</div><div class="v">' + A.leads30d + '</div></div>'
+    + '<div class="kpi"><div class="k">CPL medio (30d)</div><div class="v">' + eur(A.cpl30d) + '</div></div>'
+    + '</div></div>';
+
+  h += '<div class="card"><h2>Recomendaciones</h2>'
+    + '<div class="hint">Prioridad alta → baja</div><ul class="recs">';
+  A.recommendations.forEach((r, i) => h += '<li><span class="n">' + (i + 1) + '</span>' + r + '</li>');
+  h += '</ul></div>';
+
+  h += '<div class="card"><h2>Campañas <span class="pill">últimos 30 días</span></h2>'
+    + '<div style="overflow-x:auto"><table><thead><tr><th class="l">Campaña</th><th>Estado</th><th>Gasto</th><th>CTR</th><th>CPC</th><th>Result.</th><th>Coste/result</th></tr></thead><tbody>';
+  A.campaigns.forEach(c => {
+    h += '<tr><td class="l">' + c.name + '</td><td>' + badge(c.status) + '</td>'
+      + '<td>' + eur(c.spend) + '</td><td>' + pct(c.ctr) + '</td><td>' + eur(c.cpc) + '</td>'
+      + '<td>' + num(c.results) + ' ' + c.resultType + '</td>'
+      + '<td>' + (c.costPerResult == null ? '—' : eur(c.costPerResult)) + '</td></tr>';
+  });
+  h += '</tbody></table></div></div>';
+
+  h += '<div class="card"><h2>Grupos de anuncios <span class="pill">últimos 30 días</span></h2>'
+    + '<div style="overflow-x:auto"><table><thead><tr><th class="l">Ad set</th><th>Estado</th><th>Gasto</th><th>CTR</th><th>CPC</th><th>Result.</th><th>Coste/result</th></tr></thead><tbody>';
+  A.adsets.forEach(c => {
+    h += '<tr><td class="l">' + c.name + '</td><td>' + badge(c.status) + '</td>'
+      + '<td>' + eur(c.spend) + '</td><td>' + pct(c.ctr) + '</td><td>' + eur(c.cpc) + '</td>'
+      + '<td>' + num(c.results) + ' ' + c.resultType + '</td>'
+      + '<td>' + (c.costPerResult == null ? '—' : eur(c.costPerResult)) + '</td></tr>';
+  });
+  h += '</tbody></table></div></div>';
+
+  if (A.pixels && A.pixels.length) {
+    h += '<div class="card"><h2>Salud de tracking</h2>'
+      + '<div style="overflow-x:auto"><table><thead><tr><th class="l">Píxel / dataset</th><th class="l">Estado</th></tr></thead><tbody>';
+    A.pixels.forEach(p => {
+      h += '<tr><td class="l">' + p.name + '</td><td class="l"><span class="dot ' + p.status + '"></span>' + p.detail + '</td></tr>';
+    });
+    h += '</tbody></table></div></div>';
+  }
+
+  document.getElementById('view').innerHTML = h;
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+checkAuth();
+</script>
+</body>
+</html>
