@@ -144,9 +144,9 @@ const TEAM_PWD = 'drizapaid';
 const METRICS = [['spend','Gasto'],['impressions','Impr.'],['clicks','Clics'],['ctr','CTR'],['cpc','CPC'],['cpm','CPM']];
 const DIR = {spend:'neu',impressions:'neu',clicks:'neu',ctr:'up',cpc:'down',cpm:'down'};
 const WIN = {
-  day:  {cur:[38,39], prev:[37,38], lbl:'8-jun vs 7-jun'},
-  week: {cur:[32,39], prev:[25,32], lbl:'2–8 jun vs 26 may–1 jun'},
-  month:{cur:[31,39], prev:[0,8],   lbl:'jun 1–8 vs may 1–8'}
+  day:  {cur:[43,44], prev:[42,43], lbl:'14-jun vs 13-jun'},
+  week: {cur:[37,44], prev:[30,37], lbl:'8–14 jun vs 1–7 jun'},
+  month:{cur:[31,44], prev:[0,13],  lbl:'jun 1–14 vs may 1–13'}
 };
 
 let DATA = null, period = 'week', tab = 'cartera', chart = null, chartAcct = null, chartMetric = 'spend';
@@ -323,7 +323,7 @@ function renderCartera() {
       + '<span class="d ' + dcls(m[0], T.delta[m[0]]) + '">' + darr(T.delta[m[0]]) + '</span></td>';
   });
   h += '</tr></tbody></table>'
-    + '<div class="note">Leads / CPL no se agregan a nivel cartera (objetivos distintos). Van en el detalle de cada cuenta. Hoy (9-jun) se excluye por ser día parcial.</div></div>';
+    + '<div class="note">Leads / CPL no se agregan a nivel cartera (objetivos distintos). Van en el detalle de cada cuenta. Hoy (15-jun) se excluye por ser día parcial.</div></div>';
 
   h += '<div class="card"><h2>Tendencia · 12 meses</h2><div class="cw">'
     + '<select id="cAcct">' + DATA.order.map(a => '<option value="' + a + '"' + (a === chartAcct ? ' selected' : '') + '>' + DATA.accounts[a].name + '</option>').join('') + '</select>'
