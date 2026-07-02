@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-24T06:00:00.000Z",
-  "periodStart": "2026-05-10",
-  "periodEnd": "2026-06-23",
+  "generated": "2026-07-01T06:00:00.000Z",
+  "periodStart": "2026-05-17",
+  "periodEnd": "2026-06-30",
   "order": ["padmi", "coton", "pom"],
   "accounts": {
     "padmi": {
@@ -9,16 +9,9 @@
       "fullName": "Padmi Publicitaria",
       "adAccountId": "1078022190785024",
       "model": "Lead gen B2B · pádel",
-      "leads30d": 70,
-      "cpl30d": 34.16,
+      "leads30d": 67,
+      "cpl30d": 38.85,
       "daily": [
-        [156.67, 31701, 349],
-        [176.71, 54987, 551],
-        [218.80, 89267, 916],
-        [125.42, 40293, 437],
-        [105.70, 22119, 257],
-        [105.44, 19657, 205],
-        [65.11, 11349, 160],
         [113.70, 26223, 290],
         [69.08, 15469, 157],
         [86.16, 17318, 188],
@@ -55,8 +48,15 @@
         [91.10, 10615, 123],
         [84.78, 9896, 116],
         [111.06, 13133, 132],
-        [85.08, 11077, 79],
-        [91.75, 10489, 90]
+        [85.11, 11080, 79],
+        [92.46, 10512, 91],
+        [88.47, 9827, 88],
+        [98.93, 8964, 91],
+        [113.31, 10410, 92],
+        [101.98, 11032, 110],
+        [138.92, 15212, 157],
+        [112.48, 14943, 122],
+        [83.96, 10933, 103]
       ],
       "monthly": [
         ["May 25", null, null, null],
@@ -72,62 +72,73 @@
         ["Mar 26", 2507.17, 680879, 9333],
         ["Abr 26", 2020.69, 502206, 4717],
         ["May 26", 3439.18, 721291, 7686],
-        ["Jun 26*", 1956.92, 264386, 3154]
+        ["Jun 26", 2695.71, 345733, 3918]
       ],
       "campaigns": [
         {
           "name": "GP_LEA_PRO_ES_FORMB2B _V2 - Copia",
           "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 1394.84,
-          "ctr": 0.69,
-          "cpc": 0.96,
-          "results": 35,
+          "spend": 1350.26,
+          "ctr": 0.74,
+          "cpc": 0.97,
+          "results": 27,
           "resultType": "leads",
-          "costPerResult": 39.85
+          "costPerResult": 50.01
         },
         {
           "name": "GP_LEA_PRO_BE+FR_FORMB2B _V1 - Copia 2",
           "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 853.29,
-          "ctr": 1.16,
-          "cpc": 0.75,
-          "results": 34,
+          "spend": 1107.98,
+          "ctr": 1.10,
+          "cpc": 0.84,
+          "results": 39,
           "resultType": "leads",
-          "costPerResult": 25.10
+          "costPerResult": 28.41
         },
         {
           "name": "GP_LEA_RTG_ES_FORMB2B",
-          "status": "PAUSED",
+          "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 142.88,
-          "ctr": 1.14,
-          "cpc": 0.71,
+          "spend": 144.63,
+          "ctr": 0.88,
+          "cpc": 0.82,
           "results": 1,
           "resultType": "leads",
-          "costPerResult": 142.88
+          "costPerResult": 144.63
         },
         {
           "name": "GP_INT_PRO_ES - Owly",
-          "status": "ACTIVE",
+          "status": "PAUSED",
           "objective": "Engagement",
-          "spend": 95.90,
-          "ctr": 7.27,
+          "spend": 68.71,
+          "ctr": 7.31,
           "cpc": 0.07,
           "results": null,
           "resultType": "visitas perfil",
           "costPerResult": null
         },
         {
-          "name": "GP_LEA_PRO_BE+FR_FORMB2B _V1 - Copia",
-          "status": "PAUSED",
+          "name": "GP_LEA_PRO_FR_ ciudades pequeñas",
+          "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 64.84,
-          "ctr": 0.90,
-          "cpc": 0.97,
+          "spend": 18.87,
+          "ctr": 0.77,
+          "cpc": 1.89,
           "results": null,
           "resultType": "leads",
+          "costPerResult": null
+        },
+        {
+          "name": "GP_INT_PRO_ES - Calvos",
+          "status": "ACTIVE",
+          "objective": "Engagement",
+          "spend": 5.26,
+          "ctr": 2.78,
+          "cpc": 0.15,
+          "results": null,
+          "resultType": "visitas perfil",
           "costPerResult": null
         }
       ],
@@ -135,52 +146,52 @@
         {
           "name": "FORM_B2B_AD+",
           "status": "ACTIVE",
-          "spend": 607.39,
-          "ctr": 0.84,
-          "cpc": 0.76,
-          "results": 16,
+          "spend": 681.35,
+          "ctr": 0.92,
+          "cpc": 0.81,
+          "results": 17,
           "resultType": "leads",
-          "costPerResult": 37.96
+          "costPerResult": 40.08
         },
         {
           "name": "FORM_B2B_INT (nuevas creatives)",
           "status": "PAUSED",
-          "spend": 588.50,
+          "spend": 442.79,
           "ctr": 0.62,
-          "cpc": 1.11,
-          "results": 14,
+          "cpc": 1.14,
+          "results": 8,
           "resultType": "leads",
-          "costPerResult": 42.04
-        },
-        {
-          "name": "FORM_B2B_Paris_AD+ estáticas",
-          "status": "PAUSED",
-          "spend": 329.21,
-          "ctr": 1.57,
-          "cpc": 0.61,
-          "results": 12,
-          "resultType": "leads",
-          "costPerResult": 27.43
-        },
-        {
-          "name": "FORM_B2B_BE_AD+",
-          "status": "ACTIVE",
-          "spend": 223.27,
-          "ctr": 0.97,
-          "cpc": 0.86,
-          "results": 7,
-          "resultType": "leads",
-          "costPerResult": 31.90
+          "costPerResult": 55.35
         },
         {
           "name": "FORM_B2B_Paris_AD+ - Vídeos",
           "status": "ACTIVE",
-          "spend": 199.56,
-          "ctr": 0.93,
-          "cpc": 0.90,
+          "spend": 419.23,
+          "ctr": 0.95,
+          "cpc": 0.98,
+          "results": 19,
+          "resultType": "leads",
+          "costPerResult": 22.06
+        },
+        {
+          "name": "FORM_B2B_BE_AD+",
+          "status": "ACTIVE",
+          "spend": 289.91,
+          "ctr": 0.97,
+          "cpc": 0.91,
           "results": 12,
           "resultType": "leads",
-          "costPerResult": 16.63
+          "costPerResult": 24.16
+        },
+        {
+          "name": "FORM_B2B_Paris_AD+ estáticas",
+          "status": "PAUSED",
+          "spend": 224.88,
+          "ctr": 1.77,
+          "cpc": 0.55,
+          "results": 5,
+          "resultType": "leads",
+          "costPerResult": 44.98
         },
         {
           "name": "FORM_B2B_INT (antiguas creatives)",
@@ -195,29 +206,89 @@
         {
           "name": "RTG_BE_FORMB2B _V1",
           "status": "ACTIVE",
-          "spend": 142.88,
-          "ctr": 1.14,
-          "cpc": 0.71,
+          "spend": 108.40,
+          "ctr": 1.06,
+          "cpc": 0.78,
           "results": 1,
           "resultType": "leads",
-          "costPerResult": 142.88
+          "costPerResult": 108.40
+        },
+        {
+          "name": "FORM_B2B_Lyon_AD+",
+          "status": "PAUSED",
+          "spend": 82.73,
+          "ctr": 0.89,
+          "cpc": 1.03,
+          "results": 1,
+          "resultType": "leads",
+          "costPerResult": 82.73
         },
         {
           "name": "Adset 1 - Interacción Owly",
           "status": "ACTIVE",
-          "spend": 95.90,
-          "ctr": 7.27,
+          "spend": 68.71,
+          "ctr": 7.31,
           "cpc": 0.07,
           "results": null,
           "resultType": "visitas perfil",
           "costPerResult": null
         },
         {
-          "name": "FORM_B2B_FR_AD+",
+          "name": "FORM_B2B_AD+ - Verano",
           "status": "ACTIVE",
-          "spend": 54.83,
-          "ctr": 0.98,
-          "cpc": 0.90,
+          "spend": 65.64,
+          "ctr": 0.65,
+          "cpc": 0.74,
+          "results": 1,
+          "resultType": "leads",
+          "costPerResult": 65.64
+        },
+        {
+          "name": "FORM_B2B_Bourdeaux_AD+",
+          "status": "PAUSED",
+          "spend": 55.77,
+          "ctr": 0.80,
+          "cpc": 1.05,
+          "results": 1,
+          "resultType": "leads",
+          "costPerResult": 55.77
+        },
+        {
+          "name": "RTG_ES",
+          "status": "ACTIVE",
+          "spend": 36.23,
+          "ctr": 0.54,
+          "cpc": 0.95,
+          "results": null,
+          "resultType": "leads",
+          "costPerResult": null
+        },
+        {
+          "name": "FORM_B2B_Tolouse_AD+",
+          "status": "PAUSED",
+          "spend": 35.46,
+          "ctr": 0.85,
+          "cpc": 1.11,
+          "results": 1,
+          "resultType": "leads",
+          "costPerResult": 35.46
+        },
+        {
+          "name": "FORM_B2B_Tolouse_AD+",
+          "status": "ACTIVE",
+          "spend": 6.67,
+          "ctr": 0.32,
+          "cpc": 6.67,
+          "results": null,
+          "resultType": "leads",
+          "costPerResult": null
+        },
+        {
+          "name": "FORM_B2B_Bourdeaux_AD+",
+          "status": "ACTIVE",
+          "spend": 6.60,
+          "ctr": 0.76,
+          "cpc": 2.20,
           "results": null,
           "resultType": "leads",
           "costPerResult": null
@@ -225,51 +296,21 @@
         {
           "name": "FORM_B2B_Lyon_AD+",
           "status": "ACTIVE",
-          "spend": 48.87,
-          "ctr": 0.93,
-          "cpc": 0.87,
-          "results": 1,
-          "resultType": "leads",
-          "costPerResult": 48.87
-        },
-        {
-          "name": "FORM_B2B_World padel summit",
-          "status": "PAUSED",
-          "spend": 38.47,
-          "ctr": 0.68,
-          "cpc": 0.65,
-          "results": 4,
-          "resultType": "leads",
-          "costPerResult": 9.62
-        },
-        {
-          "name": "FORM_B2B_Bourdeaux_AD+",
-          "status": "ACTIVE",
-          "spend": 31.53,
-          "ctr": 0.91,
-          "cpc": 0.83,
-          "results": 1,
-          "resultType": "leads",
-          "costPerResult": 31.53
-        },
-        {
-          "name": "FORM_B2B_Tolouse_AD+",
-          "status": "ACTIVE",
-          "spend": 20.85,
-          "ctr": 0.73,
-          "cpc": 1.16,
-          "results": 1,
-          "resultType": "leads",
-          "costPerResult": 20.85
-        },
-        {
-          "name": "FORM_B2B_BE_AD+ (2)",
-          "status": "ACTIVE",
-          "spend": 10.01,
-          "ctr": 0.48,
-          "cpc": 1.67,
+          "spend": 5.60,
+          "ctr": 1.02,
+          "cpc": 0.93,
           "results": null,
           "resultType": "leads",
+          "costPerResult": null
+        },
+        {
+          "name": "Interacción - Video Calvos",
+          "status": "ACTIVE",
+          "spend": 5.26,
+          "ctr": 2.78,
+          "cpc": 0.15,
+          "results": null,
+          "resultType": "visitas perfil",
           "costPerResult": null
         }
       ],
@@ -306,16 +347,9 @@
       "fullName": "Coton et Bois",
       "adAccountId": "478835545931836",
       "model": "Lead gen · reformas/cocinas",
-      "leads30d": 76,
-      "cpl30d": 13.68,
+      "leads30d": 77,
+      "cpl30d": 12.69,
       "daily": [
-        [27.28, 3939, 207],
-        [25.08, 3450, 171],
-        [34.52, 5297, 363],
-        [56.39, 7939, 699],
-        [39.04, 5137, 382],
-        [37.65, 5111, 381],
-        [39.85, 5587, 459],
         [66.33, 11937, 748],
         [41.95, 7538, 506],
         [46.98, 8106, 578],
@@ -353,7 +387,14 @@
         [28.10, 2600, 132],
         [28.82, 3166, 120],
         [25.66, 2540, 102],
-        [20.06, 2013, 81]
+        [20.08, 2017, 83],
+        [18.78, 1992, 72],
+        [14.81, 1620, 64],
+        [15.18, 1499, 70],
+        [13.05, 1257, 55],
+        [18.20, 2003, 83],
+        [10.26, 1329, 71],
+        [10.96, 1400, 52]
       ],
       "monthly": [
         ["May 25", 415.39, 115212, 6028],
@@ -369,103 +410,103 @@
         ["Mar 26", 431.59, 112648, 7638],
         ["Abr 26", 430.60, 109388, 9166],
         ["May 26", 1049.33, 157756, 11448],
-        ["Jun 26*", 875.80, 107114, 5267]
+        ["Jun 26", 977.06, 118218, 5736]
       ],
       "campaigns": [
         {
           "name": "ES_Captación_Leads_Prospecting Cocina",
           "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 629.77,
-          "ctr": 3.66,
+          "spend": 603.57,
+          "ctr": 3.76,
           "cpc": 0.21,
           "results": 48,
           "resultType": "leads",
-          "costPerResult": 13.12
+          "costPerResult": 12.57
         },
         {
           "name": "ES_Captación_Leads_Prospecting Reforma completa",
           "status": "PAUSED",
           "objective": "Leads",
-          "spend": 280.64,
-          "ctr": 7.50,
+          "spend": 213.65,
+          "ctr": 7.41,
           "cpc": 0.10,
-          "results": 13,
+          "results": 10,
           "resultType": "leads",
-          "costPerResult": 21.59
+          "costPerResult": 21.37
         },
         {
           "name": "ES_Captación_Lead Ads_Prospecting Reforma completa - Copia",
           "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 129.53,
-          "ctr": 6.01,
-          "cpc": 0.23,
-          "results": 15,
+          "spend": 159.84,
+          "ctr": 5.89,
+          "cpc": 0.24,
+          "results": 19,
           "resultType": "leads",
-          "costPerResult": 8.64
+          "costPerResult": 8.41
         }
       ],
       "adsets": [
         {
+          "name": "ES_Intereses_Leads_Estilo_Cocinas V2",
+          "status": "ACTIVE",
+          "spend": 259.26,
+          "ctr": 3.71,
+          "cpc": 0.18,
+          "results": 22,
+          "resultType": "leads",
+          "costPerResult": 11.78
+        },
+        {
           "name": "ES_Intereses_Leads_Estilo_Cocinas",
           "status": "PAUSED",
-          "spend": 323.34,
-          "ctr": 3.35,
-          "cpc": 0.26,
-          "results": 25,
+          "spend": 226.19,
+          "ctr": 3.38,
+          "cpc": 0.27,
+          "results": 17,
           "resultType": "leads",
-          "costPerResult": 12.93
+          "costPerResult": 13.31
         },
         {
           "name": "ES_Intereses_Leads_LAL Web Advt+",
           "status": "ACTIVE",
-          "spend": 280.64,
-          "ctr": 7.50,
+          "spend": 213.65,
+          "ctr": 7.41,
           "cpc": 0.10,
-          "results": 13,
+          "results": 10,
           "resultType": "leads",
-          "costPerResult": 21.59
-        },
-        {
-          "name": "ES_Intereses_Leads_Estilo_Cocinas V2",
-          "status": "ACTIVE",
-          "spend": 209.98,
-          "ctr": 3.69,
-          "cpc": 0.17,
-          "results": 17,
-          "resultType": "leads",
-          "costPerResult": 12.35
+          "costPerResult": 21.37
         },
         {
           "name": "ES_RTG_Leads_Estilo_Cocinas - Estáticas",
           "status": "ACTIVE",
-          "spend": 96.45,
-          "ctr": 4.63,
+          "spend": 118.12,
+          "ctr": 4.61,
           "cpc": 0.19,
-          "results": 6,
+          "results": 9,
           "resultType": "leads",
-          "costPerResult": 16.08
-        },
-        {
-          "name": "ES_Intereses_Leads_LAL Web Advt+ - Ads 2",
-          "status": "ACTIVE",
-          "spend": 69.02,
-          "ctr": 4.71,
-          "cpc": 0.29,
-          "results": 7,
-          "resultType": "leads",
-          "costPerResult": 9.86
+          "costPerResult": 13.12
         },
         {
           "name": "ES_Intereses_Leads_LAL Web Advt+ (2)",
           "status": "ACTIVE",
-          "spend": 60.51,
-          "ctr": 7.51,
-          "cpc": 0.19,
-          "results": 8,
+          "spend": 85.16,
+          "ctr": 7.10,
+          "cpc": 0.21,
+          "results": 12,
           "resultType": "leads",
-          "costPerResult": 7.56
+          "costPerResult": 7.10
+        },
+        {
+          "name": "ES_Intereses_Leads_LAL Web Advt+ - Ads 2",
+          "status": "ACTIVE",
+          "spend": 74.68,
+          "ctr": 4.59,
+          "cpc": 0.30,
+          "results": 7,
+          "resultType": "leads",
+          "costPerResult": 10.67
         }
       ],
       "recommendations": [
@@ -480,16 +521,9 @@
       "fullName": "Pom Medical",
       "adAccountId": "1006407757639528",
       "model": "Lead gen · clínicas dentales",
-      "leads30d": 123,
-      "cpl30d": 19.49,
+      "leads30d": 129,
+      "cpl30d": 17.52,
       "daily": [
-        [97.37, 6867, 67],
-        [94.05, 7730, 72],
-        [83.78, 6449, 63],
-        [84.65, 5419, 49],
-        [73.90, 5249, 53],
-        [68.19, 4950, 46],
-        [60.19, 4835, 36],
         [93.48, 6936, 56],
         [83.35, 6690, 67],
         [89.62, 7210, 54],
@@ -526,8 +560,15 @@
         [75.51, 6032, 50],
         [68.64, 4852, 62],
         [101.57, 8181, 96],
-        [82.06, 7448, 57],
-        [75.51, 7803, 71]
+        [82.09, 7449, 57],
+        [75.55, 7806, 71],
+        [83.48, 7066, 75],
+        [76.91, 6013, 78],
+        [73.14, 6639, 62],
+        [66.92, 9002, 74],
+        [99.47, 10821, 101],
+        [21.80, 2090, 23],
+        [0, 0, 0]
       ],
       "monthly": [
         ["May 25", null, null, null],
@@ -543,72 +584,72 @@
         ["Mar 26", 1792.65, 174916, 1741],
         ["Abr 26", 1195.47, 90079, 1037],
         ["May 26", 2471.77, 178754, 1747],
-        ["Jun 26*", 1837.75, 138626, 1285]
+        ["Jun 26", 2259.54, 180261, 1698]
       ],
       "campaigns": [
         {
           "name": "CA_Clínicas Dentales_ Lead Ads - Prospecting",
           "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 2246.45,
-          "ctr": 0.87,
-          "cpc": 1.50,
-          "results": 111,
+          "spend": 2118.18,
+          "ctr": 0.90,
+          "cpc": 1.35,
+          "results": 119,
           "resultType": "leads",
-          "costPerResult": 20.24
+          "costPerResult": 17.80
         },
         {
           "name": "CA_Clínicas Dentales_ Lead ADS - Retargeting",
           "status": "ACTIVE",
           "objective": "Leads",
-          "spend": 151.19,
-          "ctr": 1.97,
-          "cpc": 1.02,
-          "results": 12,
+          "spend": 141.36,
+          "ctr": 1.90,
+          "cpc": 1.07,
+          "results": 10,
           "resultType": "leads",
-          "costPerResult": 12.60
+          "costPerResult": 14.14
         }
       ],
       "adsets": [
         {
           "name": "GR_Clínicas Dentales NUEVO_ DENTISTAS",
           "status": "ACTIVE",
-          "spend": 996.67,
-          "ctr": 0.95,
-          "cpc": 1.25,
-          "results": 49,
+          "spend": 1088.95,
+          "ctr": 0.93,
+          "cpc": 1.11,
+          "results": 62,
           "resultType": "leads",
-          "costPerResult": 20.34
+          "costPerResult": 17.56
         },
         {
           "name": "GR_Clínicas Dentales NUEVO_Advt+",
           "status": "ACTIVE",
-          "spend": 959.54,
-          "ctr": 0.75,
-          "cpc": 1.99,
-          "results": 47,
+          "spend": 779.35,
+          "ctr": 0.82,
+          "cpc": 1.98,
+          "results": 42,
           "resultType": "leads",
-          "costPerResult": 20.42
+          "costPerResult": 18.56
         },
         {
           "name": "GR_Clínicas Dentales NUEVO_Advt+ (Facebook)",
           "status": "ACTIVE",
-          "spend": 290.24,
-          "ctr": 0.90,
-          "cpc": 1.36,
+          "spend": 249.88,
+          "ctr": 0.97,
+          "cpc": 1.30,
           "results": 15,
           "resultType": "leads",
-          "costPerResult": 19.35
+          "costPerResult": 16.66
         },
         {
           "name": "GR_RTG General",
           "status": "ACTIVE",
-          "spend": 151.19,
-          "ctr": 1.97,
-          "cpc": 1.02,
-          "results": 12,
+          "spend": 141.36,
+          "ctr": 1.90,
+          "cpc": 1.07,
+          "results": 10,
           "resultType": "leads",
-          "costPerResult": 12.60
+          "costPerResult": 14.14
         }
       ],
       "recommendations": [
